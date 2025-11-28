@@ -23,6 +23,7 @@ jobs:
 
   git-leaks-scan:
     runs-on: agent-1
+    needs: compile
 
     steps:
       - name: checkout code
