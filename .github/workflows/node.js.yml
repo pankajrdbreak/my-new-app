@@ -58,9 +58,9 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          IMAGE_TAG=${{ github.sha }}
-          docker build -t ${{ steps.set_uri.outputs.repo_uri }}:$IMAGE_TAG .
-          docker tag ${{ steps.set_uri.outputs.repo_uri }}:$IMAGE_TAG ${{ steps.set_uri.outputs.repo_uri }}:latest
+          docker build -t my-new-app .
+          echo "IMAGE_BUILT=true" >> $GITHUB_ENV
+          
 
       - name: Push Image to ECR
         run: |
